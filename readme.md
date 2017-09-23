@@ -16,7 +16,7 @@ Thanks for the assignment. I hope you like it. Here are just a few notes on...
 
 * Bootstrap not used for responsiveness due to 800px breakpoint as bootstrap's is 768px, did not want to override bootstrap breakpoints to avoid breaking other features that may be integrated later.
 
-## extra feature
+## Extra features
 
 I added a few features not included in the spec, hope you like them...
 
@@ -26,7 +26,7 @@ I added a few features not included in the spec, hope you like them...
   * Clicking on the photo in the #post page brings up modal with larger photo
 
 
-## functionality
+## Functionality
 
 * `window.onload` function in script.js always reroutes to #home to eliminate seeing empty #results and #post pages
 * back buttons reroute to previous page (#post -> #results -> #home)
