@@ -1,42 +1,35 @@
-/*
-	Theme Name:
-	Author: Ahmed Abuelgasim
-	Author URI: ahmeda.ga
-	Description:  */
-
 /////////////
 //VARIABLES//
 /////////////
 //Color palette
-
-//Fonts
+$base: #24344b
+$dark: #0d1526
+$light: #1e90ff
+$accent: #f03c4d
+$black: #020911
+$nickel: #6a727c
 
 //////////////////////
 //MIXINS AND EXTENDS//
 //////////////////////
+
 %clearfix:after
 	content: " "
 	display: block
 	clear: both
 
-=transformScale($scale)
-	-webkit-transform: scale($scale)
-	-moz-transform: scale($scale)
-	-ms-transform: scale($scale)
-	-o-transform: scale($scale)
-	transform: scale($scale)
+// =transformScale($scale)
+// 	-webkit-transform: scale($scale)
+// 	-moz-transform: scale($scale)
+// 	-ms-transform: scale($scale)
+// 	-o-transform: scale($scale)
+// 	transform: scale($scale)
 
-=transformRotate($angle)
-	-webkit-transform: rotate($angle)
-	-moz-transform: rotate($angle)
-	-o-transform: rotate($angle)
-	transform: rotate($angle)
-
-// =transition($time,$type)
-	// -webkit-transition: $time $type
-	// -moz-transition: $time $type
-	// -o-transition: $time $type
-	// transition: $time $type
+// =transformRotate($angle)
+// 	-webkit-transform: rotate($angle)
+// 	-moz-transform: rotate($angle)
+// 	-o-transform: rotate($angle)
+// 	transform: rotate($angle)
 
 // =inputplaceholder
 	// &::-webkit-input-placeholder
@@ -48,42 +41,28 @@
 	// &:-ms-input-placeholder
 	// 	@content
 
-// =transformscale($scale)
-	// -webkit-transform: scale($scale)
-	// -moz-transform: scale($scale)
-	// -ms-transform: scale($scale)
-	// -o-transform: scale($scale)
-	// transform: scale($scale)
-
-// =gradient($color1, $color2)
-	// background: -webkit-linear-gradient(to right, $color1, $color2)
-	// background: linear-gradient(to right, $color1, $color2)
-
-// =backgroundcover($img)
-	// background-size: cover
-	// background-position: center center
-	// background-repeat: no-repeat
-
 //////////////////////////
 //STANDARD HTML ELEMENTS//
 //////////////////////////
 html
 	height: 100%
 	font-size: 10px
-
 body
-	background: pink //
-	//position: relative /*Needed for scrollspy*/
 	height: 100%
-	//font-family:
-	//font-size:
-	//color:
-
+	padding: 10px
+	background: $base
+	font-size: 1.4rem
+	font-weight: 400
+	font-family: 'Lato'
+	color: $black
 ul
 	list-style-type: none
-a,a:hover,a:active,a:focus
-	color: inherit
-	text-decoration: none
+a
+	color: $accent
+	font-weight: 700
+	&:hover
+		color: $accent
+		text-decoration: underline
 h1,
 h2,
 h3,
@@ -92,164 +71,280 @@ h5
 	margin: 30px 0
 	padding: 0
 	font-weight: 700
+h1
+	margin: 0 0 30px
+	text-align: center
+	text-transform: uppercase
 p
 	margin-bottom: 15px
 	a
 		font-weight: 700
 		&:hover
 			text-decoration: underline
-// input,textarea
-	// width: 100%
-	// height: 43px
-	// margin: 10px 0
-	// box-shadow: none
-	// outline: medium none
-	// border: 2px solid #777
-	// border-radius: 0
-	// background-color: transparent
-	// padding: 10px
-	// color: #999999
+input
+	width: 100%
+	max-width: 500px
+	height: 50px
+	margin-bottom: 20px
+	padding: 10px
+	color: $dark
+	transition: border-color .3s ease
+	box-shadow: none
+	outline: medium none
+	border: 2px solid $base
+	background-color: white
+	&:hover,
+	&:active,
+	&:focus
+		background-color: white
+		border: 2px solid $accent
 
-
-//////////////
-//COMPONENTS//
-//////////////
-%clearfix:after
-	content: " "
-	display: block
-	clear: both
-
-section
-	padding: 50px 0
-
-.navBurger
-	position: fixed
-	top: 3px
-	right: 5px
-	opacity: 1
-	z-index: 20
-	width: 60px
-	height: 45px
-	cursor: pointer
-	transition: all .5s ease-in-out
-	+transformRotate(0)
-	+transformScale(.5)
-	span
-		position: absolute
-		left: 0
-		width: 100%
-		height: 4px
-		border-radius: 9px
-		background-color: red
-		transition: all .25s ease-in-out
-		+transformRotate(0)
-		&:nth-child(1)
-			top: 0px
-		&:nth-child(2),&:nth-child(3)
-			top: 18px
-		&:nth-child(4)
-			top: 36px
-	&.open
-		opacity: 1
-		span:nth-child(1)
-			top: 18px
-			left: 50%
-			width: 0%
-		span:nth-child(2)
-			+transformRotate(45deg)
-		span:nth-child(3)
-			+transformRotate(-45deg)
-		span:nth-child(4)
-			top: 18px
-			left: 50%
-			width: 0%
-	@media (min-width: 768px)
-		display: none
-
-.myNavbar
-	display: none
-	position: fixed
-	right: 0
-	z-index: 15
-	width: 175px
-	height: 100%
-	background: purple
-	ul
-		float: right
-		width: 100%
-		margin-top: 40px
-		padding: 10px 25px
-		text-align: center
-		background: inherit
-		list-style-type: none
-		li
-			display: block
-			margin-top: 15px
-			font-size: 2rem
-			a
-				display: block
-				padding: 10px 0
-				&:focus,
-				&:hover
-					background: transparent
-			.line
-				width: 0
-				height: 3px
-				background: yellow
-				transition: width .2s ease
-			&.active,
-			&:hover
-				.line
-					width: 100%
-	@media (min-width: 768px)
-		display: block
-		width: 100%
-		height: 70px
-		ul
-			width: auto
-			height: auto
-			margin-top: 0
-			padding: 0px 30px 0 0
-			li
-				display: inline-block
-				font-size: 1.4rem
-				&~li
-					margin-left: 10px
-				a
-					padding: 7px 5px
+/////////////////////
+//COMMON COMPONENTS//
+/////////////////////
 
 .cta
 	display: inline-block
 	position: relative
 	z-index: 5
-	margin: 20px 0
-	background: orange
 	padding: 15px
+	background: $accent
 	text-align: center
-	font-size: 1.2rem
 	font-weight: 700
-	line-height: 1.2em
 	letter-spacing: 2px
-	text-transform: uppercase
+	line-height: 1em
 	color: white
 	cursor: pointer
 	&:before
-		content: ''
 		position: absolute
 		z-index: -1
+		content: ''
 		top: 0
 		left: 0
 		width: 0
 		height: 100%
-		background: teal
+		background: $light
 		transition: width .2s ease
 	&:hover
-		a
-			color: inherit
-			text-decoration: none !important
 		&:before
 			width: 100%
+
+/*each page in ng-view has a .wrapper class to contain it*/
+.wrapper
+	position: relative
+	width: 95%
+	max-width: 900px
+	margin: 0 auto
+	padding: 5px
+	background: white
+	text-align: center
+
+/*cards that appear in #results .postList*/
+.post
+	margin: 10px 0
+	padding: 10px
+	background: white
+	text-align: left
+	color: $black
+	overflow: hidden
+	.leftDiv
+		float: left
+		width: 100%
+		height: 100%
+		padding: 5px
+		text-align: center
+		overflow: hidden
+		img
+			height: 100%
+			cursor: pointer
+	.rightDiv
+		float: left
+		width: 100%
+		padding: 5px
+		.title
+			padding-left: 10px
+			font-size: 1.4rem
+			font-weight: bold
+			white-space: nowrap
+			text-overflow: ellipsis
+			overflow: hidden
+			cursor: pointer
+			&:hover
+				text-decoration: underline
+				color: $accent
+		.postMeta
+			position: relative
+			padding: 0 25%
+			font-size: 1.4rem
+			&>div
+				padding: 10px
+			.author,.link
+				position: absolute
+				top: 0
+				bottom: 0
+				width: 25%
+			.author
+				left: 0
+				word-wrap: break-word
+			.link
+				right: 0
+				text-align: right
+		@media (max-width: 800px)
+			.postMeta
+				padding: 0
+				.author, .link
+					position: static
+					float: left
+					width: 50%
+	&.ng-leave
+		transition: .1s linear all
+		opacity: 1
+	&.ng-leave.ng-leave-active
+		opacity: 0
+	&.ng-enter
+		transition: .1s linear all
+		opacity: 0
+	&.ng-enter.ng-enter-active
+		opacity: 1
+	@media (min-width: 600px)
+		.leftDiv
+			width: 40%
+		.rightDiv
+			width: 60%
+			.title
+				font-size: 1.8rem
+	@media (min-width: 800px)
+		.leftDiv
+			width: 30%
+		.rightDiv
+			width: 70%
 
 ////////////
 ////CODE////
 ////////////
+
+#main
+	&.ng-enter
+		transition: .3s linear all
+		opacity: 0
+	&.ng-enter.ng-enter-active
+		opacity: 1
+
+#home
+	max-width: 600px
+	padding: 70px 15px
+	margin-top: 100px
+	#searchBox
+		margin-top: 20px
+	img
+		margin: 30px 0 10px
+
+#results
+	margin-top: 10px
+	background: $base
+	color: white
+	h3.title
+		width: 70%
+	.cta:hover
+		color: white
+		text-decoration: none
+
+#post
+	position: relative
+	padding: 30px
+	margin-top: 50px
+	text-align: center
+	overflow: hidden
+	.cta
+		position: absolute
+		top: 15px
+		right: 15px
+		&:hover
+			color: white
+			text-decoration: none
+	h3
+		margin-top: 50px
+		a
+			color: $black
+			&:hover
+				color: $accent
+	ul
+		padding: 0
+		li
+			text-align: center
+	.content
+		width: 100%
+		margin-top: 30px
+		&>div
+			padding: 10px
+		@extend %clearfix
+		.leftDiv
+			float: left
+			width: 100%
+			text-align: center
+			img
+				width: 100%
+				max-width: 100%
+				cursor: pointer
+		.rightDiv
+			float: left
+			padding: 0 10px
+			width: 100%
+			img
+				display: none
+			.tags span
+				font-weight: 700
+				color: $accent
+				word-wrap: break-word
+				cursor: pointer
+				&:hover
+					text-decoration: underline
+	@media (min-width: 600px)
+		text-align: left
+		ul
+			padding: 0
+			li
+				display: inline-block
+				padding-right: 10px
+				text-align: left
+				&~li
+					padding-left: 10px
+					border-left: 2px solid $base
+		.content
+			.leftDiv
+				width: 25%
+			.rightDiv
+				width: 75%
+
+.modal
+	padding: 0 !important
+	text-align: center
+	.modal-dialog,.modal-content,.modal-body
+		width: 100%
+		height: 100%
+		margin: 0
+		border-radius: 0
+		padding: 0
+	.closeModal
+		position: absolute
+		z-index: 10
+		top: 15px
+		right: 25px
+		font-size: 45px
+		color: $accent
+		cursor: pointer
+		&:hover
+			color: $light
+	.modal-content
+		background: $base
+	.modal-wrapper
+		height: 100%
+		max-width: 700px
+		margin: 0 auto
+		padding: 50px 15px
+		.imgDiv
+			width: 100%
+			height: 100%
+			background-size: contain
+			background-position: center center
+			background-repeat: no-repeat

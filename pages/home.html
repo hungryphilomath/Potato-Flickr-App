@@ -1,0 +1,17 @@
+<div id="home" class="wrapper">
+	<h1>Potato Flickr App</h1>
+
+	<p class="lead">Search recently uploaded Flickr photos with a desired tag.</p>
+
+	<input
+		id="searchBox" type="text"
+		placeholder="Separate multiple tags with spaces..."
+		ng-keyup="$event.keyCode == 13 ? mainCtrl.getPosts($event) : null"
+		ng-model="mainCtrl.searchQuery">
+
+	<p>Or click below to get recently uploaded photos tagged 'potato'</p>
+	<div class="cta" ng-click="mainCtrl.getPosts($event)">Potato Photos</div>
+	<br>
+	<img src="img/potato.svg" alt="potato company logo">
+	<p>(Sorry about the copyright infringement)</p>
+</div>

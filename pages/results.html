@@ -1,0 +1,40 @@
+<div id="results" class="wrapper">
+		<a class="cta back" href="#!/">Back</a>
+		<h3 class="searchString">{{mainCtrl.searchString}}</h3>
+		<input type="text" ng-model="tagSearch" placeholder="Filter results by tag">
+		<div class="postsList">
+
+			<div class="post" ng-repeat="post in mainCtrl.posts | filter:{tags: tagSearch}">
+				<div class="leftDiv">
+					<img
+						ng-src="{{post.media.m}}"
+						ng-click="mainCtrl.postDetails(mainCtrl.posts.indexOf(post))"
+					>
+				</div>
+				<div class="rightDiv">
+					<p class="title" ng-click="mainCtrl.postDetails(mainCtrl.posts.indexOf(post))">
+						{{post.title}}
+					</p>
+					<div class="postMeta">
+						<div class="published">Published:
+							{{post.published | dateSuffix}}
+							{{post.published | date:' MMM yyyy '}}
+							at
+							{{post.published | date:' H:mm'}}
+						</div>
+						<div class="author">
+							<a href="https://www.flickr.com/people/{{post.author_id}}" target="_blank">
+								{{post.author.split('"')[1]}}
+							</a>
+						</div>
+						<div class="link">
+							<a href="{{post.link}}" target="_blank">
+								View on Flickr
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div> <!--postsList-->
+</div><!--results-->

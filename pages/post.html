@@ -1,0 +1,42 @@
+<div id="post" class="wrapper">
+	<h3><a href="{{mainCtrl.activePost.link}}" target="_blank">{{mainCtrl.activePost.title}}</a></h3>
+	<ul>
+		<li>
+			<a href="https://www.flickr.com/people/{{mainCtrl.activePost.author_id}}" target="_blank">
+				{{mainCtrl.activePost.author.split('"')[1]}}
+			</a>
+		</li>
+		<li>Published: {{mainCtrl.activePost.published}}</li>
+	</ul>
+	<div class="content">
+		<div class="leftDiv">
+			<img ng-src="{{mainCtrl.activePost.media.m}}">
+		</div>
+		<div class="rightDiv">
+			<div ng-bind-html="mainCtrl.activePost.description"></div>
+			<p class="tags">Tags:
+
+				<span
+					ng-repeat="tag in mainCtrl.activePost.tagArray"
+					ng-click="mainCtrl.tagSearch($event)">
+						{{tag}}
+				</span>
+
+			</p>
+		</div>
+	</div>
+	<a class="cta" href="#!/results/#">Back</a>
+</div>
+
+<div class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<i class="fa fa-times closeModal" data-dismiss="modal"></i>
+			<div class="modal-body">
+				<div class="modal-wrapper">
+					<div class="imgDiv"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,353 @@
+#post .content:after {
+  content: " ";
+  display: block;
+  clear: both; }
+
+html {
+  height: 100%;
+  font-size: 10px; }
+
+body {
+  height: 100%;
+  padding: 10px;
+  background: #24344b;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: 'Lato';
+  color: #020911; }
+
+ul {
+  list-style-type: none; }
+
+a {
+  color: #f03c4d;
+  font-weight: 700; }
+
+a:hover {
+  color: #f03c4d;
+  text-decoration: underline; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 30px 0;
+  padding: 0;
+  font-weight: 700; }
+
+h1 {
+  margin: 0 0 30px;
+  text-align: center;
+  text-transform: uppercase; }
+
+p {
+  margin-bottom: 15px; }
+
+p a {
+  font-weight: 700; }
+
+p a:hover {
+  text-decoration: underline; }
+
+input {
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 10px;
+  color: #0d1526;
+  transition: border-color .3s ease;
+  box-shadow: none;
+  outline: medium none;
+  border: 2px solid #24344b;
+  background-color: white; }
+
+input:hover, input:active, input:focus {
+  background-color: white;
+  border: 2px solid #f03c4d; }
+
+.cta {
+  display: inline-block;
+  position: relative;
+  z-index: 5;
+  padding: 15px;
+  background: #f03c4d;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1em;
+  color: white;
+  cursor: pointer; }
+
+.cta:before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #1e90ff;
+  transition: width .2s ease; }
+
+.cta:hover:before {
+  width: 100%; }
+
+/*each page in ng-view has a .wrapper class to contain it*/
+.wrapper {
+  position: relative;
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5px;
+  background: white;
+  text-align: center; }
+
+/*cards that appear in #results .postList*/
+.post {
+  margin: 10px 0;
+  padding: 10px;
+  background: white;
+  text-align: left;
+  color: #020911;
+  overflow: hidden; }
+
+.post .leftDiv {
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  text-align: center;
+  overflow: hidden; }
+
+.post .leftDiv img {
+  height: 100%;
+  cursor: pointer; }
+
+.post .rightDiv {
+  float: left;
+  width: 100%;
+  padding: 5px; }
+
+.post .rightDiv .title {
+  padding-left: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer; }
+
+.post .rightDiv .title:hover {
+  text-decoration: underline;
+  color: #f03c4d; }
+
+.post .rightDiv .postMeta {
+  position: relative;
+  padding: 0 25%;
+  font-size: 1.4rem; }
+
+.post .rightDiv .postMeta > div {
+  padding: 10px; }
+
+.post .rightDiv .postMeta .author, .post .rightDiv .postMeta .link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%; }
+
+.post .rightDiv .postMeta .author {
+  left: 0;
+  word-wrap: break-word; }
+
+.post .rightDiv .postMeta .link {
+  right: 0;
+  text-align: right; }
+
+@media (max-width: 800px) {
+  .post .rightDiv .postMeta {
+    padding: 0; }
+  .post .rightDiv .postMeta .author, .post .rightDiv .postMeta .link {
+    position: static;
+    float: left;
+    width: 50%; } }
+
+.post.ng-leave {
+  transition: .1s linear all;
+  opacity: 1; }
+
+.post.ng-leave.ng-leave-active {
+  opacity: 0; }
+
+.post.ng-enter {
+  transition: .1s linear all;
+  opacity: 0; }
+
+.post.ng-enter.ng-enter-active {
+  opacity: 1; }
+
+@media (min-width: 600px) {
+  .post .leftDiv {
+    width: 40%; }
+  .post .rightDiv {
+    width: 60%; }
+  .post .rightDiv .title {
+    font-size: 1.8rem; } }
+
+@media (min-width: 800px) {
+  .post .leftDiv {
+    width: 30%; }
+  .post .rightDiv {
+    width: 70%; } }
+
+#main.ng-enter {
+  transition: .3s linear all;
+  opacity: 0; }
+
+#main.ng-enter.ng-enter-active {
+  opacity: 1; }
+
+#home {
+  max-width: 600px;
+  padding: 70px 15px;
+  margin-top: 100px; }
+
+#home #searchBox {
+  margin-top: 20px; }
+
+#home img {
+  margin: 30px 0 10px; }
+
+#results {
+  margin-top: 10px;
+  background: #24344b;
+  color: white; }
+
+#results h3.title {
+  width: 70%; }
+
+#results .cta:hover {
+  color: white;
+  text-decoration: none; }
+
+#post {
+  position: relative;
+  padding: 30px;
+  margin-top: 50px;
+  text-align: center;
+  overflow: hidden; }
+
+#post .cta {
+  position: absolute;
+  top: 15px;
+  right: 15px; }
+
+#post .cta:hover {
+  color: white;
+  text-decoration: none; }
+
+#post h3 {
+  margin-top: 50px; }
+
+#post h3 a {
+  color: #020911; }
+
+#post h3 a:hover {
+  color: #f03c4d; }
+
+#post ul {
+  padding: 0; }
+
+#post ul li {
+  text-align: center; }
+
+#post .content {
+  width: 100%;
+  margin-top: 30px; }
+
+#post .content > div {
+  padding: 10px; }
+
+#post .content .leftDiv {
+  float: left;
+  width: 100%;
+  text-align: center; }
+
+#post .content .leftDiv img {
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer; }
+
+#post .content .rightDiv {
+  float: left;
+  padding: 0 10px;
+  width: 100%; }
+
+#post .content .rightDiv img {
+  display: none; }
+
+#post .content .rightDiv .tags span {
+  font-weight: 700;
+  color: #f03c4d;
+  word-wrap: break-word;
+  cursor: pointer; }
+
+#post .content .rightDiv .tags span:hover {
+  text-decoration: underline; }
+
+@media (min-width: 600px) {
+  #post {
+    text-align: left; }
+  #post ul {
+    padding: 0; }
+  #post ul li {
+    display: inline-block;
+    padding-right: 10px;
+    text-align: left; }
+  #post ul li ~ li {
+    padding-left: 10px;
+    border-left: 2px solid #24344b; }
+  #post .content .leftDiv {
+    width: 25%; }
+  #post .content .rightDiv {
+    width: 75%; } }
+
+.modal {
+  padding: 0 !important;
+  text-align: center; }
+
+.modal .modal-dialog, .modal .modal-content, .modal .modal-body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  padding: 0; }
+
+.modal .closeModal {
+  position: absolute;
+  z-index: 10;
+  top: 15px;
+  right: 25px;
+  font-size: 45px;
+  color: #f03c4d;
+  cursor: pointer; }
+
+.modal .closeModal:hover {
+  color: #1e90ff; }
+
+.modal .modal-content {
+  background: #24344b; }
+
+.modal .modal-wrapper {
+  height: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50px 15px; }
+
+.modal .modal-wrapper .imgDiv {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat; }
